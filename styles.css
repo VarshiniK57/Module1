@@ -1,0 +1,152 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Welcome Banner */
+#welcomeBanner {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Highlighted Elements */
+.highlight {
+    background: yellow;
+    font-weight: bold;
+    padding: 5px;
+    display: inline-block;
+}
+
+/* Table for Event Gallery */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+/* Image Styling */
+.imgStyle {
+    border: 2px solid gray;
+    width: 100px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.imgStyle:hover {
+    transform: scale(1.1);
+}
+
+/* Event Registration Form */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form input, form select, form textarea {
+    margin: 8px 0;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Feedback and Event Fee Display */
+#charCount {
+    font-weight: bold;
+}
+
+#feeDisplay {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Video Section */
+video {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Buttons */
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* User Preferences */
+#preferredType {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

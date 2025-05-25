@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        #welcomeBanner {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            background: yellow;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        form input, form select, form textarea {
+            margin: 5px 0;
+            padding: 8px;
+            width: 100%;
+            max-width: 400px;
+            display: block;
+        }
+
+        form input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+    <a href="help.html" target="_blank">Help</a>
+</nav>
+
+<!-- Main Sections -->
+<section id="home"><h2>Welcome Home</h2></section>
+<section id="events"><h2>Upcoming Events</h2></section>
+<section id="contact"><h2>Contact Us</h2></section>
+
+<div id="welcomeBanner">
+    Welcome, user! <span style="color:red; font-weight:bold;">Special Offer!</span>
+</div>
+
+<p class="highlight">Register today to get early access!</p>
+
+<h3>Past Event Gallery</h3>
+<table>
+    <caption>Community Events 2024</caption>
+    <tr>
+        <td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\music.jpg" alt="Music Fest" title="Music Fest"></td>
+        <td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\foodfair.jpg" alt="Food Fair" title="Food Fair"></td>
+        <td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\art.jpeg" alt="Art Show" title="Art Show"></td></tr>
+       <tr><td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\techtalk.jpeg" alt="Tech Talk" title="Music Fest"></td>
+        <td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\familyday.jpeg" alt="Family Day" title="Family Day"></td>
+        <td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\technical.jpeg" alt="Work shop" title="Art Show"></td>
+    </tr>
+</table>
+
+<h3>Register for an Event</h3>
+<form onsubmit="showMessage(); return false;">
+    <input type="text" name="name" placeholder="Enter Name" required autofocus>
+    <input type="email" name="email" placeholder="Enter Email" required>
+    <input type="date" name="date">
+    <select name="eventType" required>
+        <option>Select Event Type</option>
+        <option>Music Fest</option>
+        <option>Food Fair/option>
+        <option>Art Show</option>
+        <option>Tech Talk</option>
+        <option>Family Day</option>
+        <option>Work Shop</option>
+    </select>
+    <textarea placeholder="Your message"></textarea>
+    <input type="submit" value="Register">
+    <output id="confirmation"></output>
+</form>
+
+<h3>Feedback</h3>
+<input type="text" id="phone" onblur="validatePhone()">
+<select onchange="showFee(this.value)">
+    <option value="">Select Event</option>
+  <option value="100">Music Fest- $100</option>
+  <option value="50">Food Fair- $50</option>
+  <option value="75">Art Show- $75</option>
+  <option value="30">Tech Talk- $30</option>
+  <option value="20">Family Day- $20</option>
+  <option value="20">Work shop- $20</option>
+</select>
+<p id="feeDisplay"></p>
+
+<h3>Event Promo Video</h3>
+<video width="320" controls oncanplay="videoReady()">
+    <source src="promo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<p id="videoStatus"></p>
+
+<button onclick="getLocation()">Find Nearby Events</button>
+<p id="location"></p>
+
+<script>
+    function showMessage() {
+        document.getElementById("confirmation").innerText = "Registration submitted!";
+    }
+
+    function validatePhone() {
+        let phone = document.getElementById("phone").value;
+        if (phone.length < 10) alert("Phone number must be at least 10 digits");
+    }
+
+    function showFee(val) {
+        document.getElementById("feeDisplay").innerText = "Fee: $" + val;
+    }
+
+    function videoReady() {
+        document.getElementById("videoStatus").innerText = "Video ready to play!";
+    }
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    document.getElementById("location").innerText =
+                        "Latitude: " + position.coords.latitude +
+                        ", Longitude: " + position.coords.longitude;
+                },
+                (error) => {
+                    document.getElementById("location").innerText = "Error: " + error.message;
+                },
+                { enableHighAccuracy: true, timeout: 5000 }
+            );
+        } else {
+            document.getElementById("location").innerText = "Geolocation not supported.";
+        }
+    }
+</script>
+
+</body>
+</html>
