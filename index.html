@@ -3,173 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <title>Local Community Event Portal</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        nav {
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        #welcomeBanner {
-            background-color: blue;
-            color: white;
-            padding: 10px;
-            margin-top: 20px;
-        }
-
-        .highlight {
-            background: yellow;
-            font-weight: bold;
-            padding: 5px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-
-        td {
-            padding: 10px;
-            text-align: center;
-        }
-
-        tr:nth-child(even) {
-            background-color: #eee;
-        }
-
-        form input, form select, form textarea {
-            margin: 5px 0;
-            padding: 8px;
-            width: 100%;
-            max-width: 400px;
-            display: block;
-        }
-
-        form input[type="submit"] {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        form input[type="submit"]:hover {
-            background-color: #218838;
-        }
-
-        button {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
-<body>
+<body class="bg-light">
 
-<!-- Navigation -->
-<nav>
-    <a href="#home">Home</a>
-    <a href="#events">Events</a>
-    <a href="#contact">Contact</a>
-    <a href="help.html" target="_blank">Help</a>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Event Portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="help.html" target="_blank">Help</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
-<!-- Main Sections -->
-<section id="home"><h2>Welcome Home</h2></section>
-<section id="events"><h2>Upcoming Events</h2></section>
-<section id="contact"><h2>Contact Us</h2></section>
-
-<div id="welcomeBanner">
-    Welcome, user! <span style="color:red; font-weight:bold;">Special Offer!</span>
+<!-- Welcome Banner -->
+<div class="container mt-4">
+    <div class="alert alert-primary text-center">
+        Welcome, user! <span class="text-danger fw-bold">Special Offer!</span>
+    </div>
 </div>
 
-<p class="highlight">Register today to get early access!</p>
+<!-- Sections -->
+<div class="container">
+    <section id="home">
+        <h2 class="text-center text-primary">Welcome Home</h2>
+    </section>
+    <section id="events">
+        <h2 class="text-center text-success">Upcoming Events</h2>
+    </section>
+    <section id="contact">
+        <h2 class="text-center text-warning">Contact Us</h2>
+    </section>
+</div>
 
-<h3>Past Event Gallery</h3>
-<table>
-    <caption>Community Events 2024</caption>
-    <tr>
-        <td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\music.jpg" alt="Music Fest" title="Music Fest"></td>
-        <td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\foodfair.jpg" alt="Food Fair" title="Food Fair"></td>
-        <td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\art.jpeg" alt="Art Show" title="Art Show"></td></tr>
-       <tr><td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\techtalk.jpeg" alt="Tech Talk" title="Music Fest"></td>
-        <td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\familyday.jpeg" alt="Family Day" title="Family Day"></td>
-        <td><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\technical.jpeg" alt="Work shop" title="Art Show"></td>
-    </tr>
-</table>
+<!-- Past Event Gallery -->
+<div class="container mt-4">
+    <h3 class="text-center">Past Event Gallery</h3>
+    <div class="row">
+        <div class="col-md-4"><img src="images/music.jpg" class="img-fluid rounded" alt="Music Fest"></div>
+        <div class="col-md-4"><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\food.jpeg" class="img-fluid rounded" alt="Food Fair"></div>
+        <div class="col-md-4"><img src="images/art.jpeg" class="img-fluid rounded" alt="Art Show"></div>
+        <div class="col-md-4"><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\technical.jpeg" class="img-fluid rounded" alt="Work Shop"></div>
+        <div class="col-md-4"><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\techtalk.jpeg" class="img-fluid rounded" alt="Tech Talk"></div>
+        <div class="col-md-4"><img src="C:\Users\varsh\OneDrive\Documents\Module1\images\familyday.jpeg" class="img-fluid rounded" alt="Family Day"></div>
+    </div>
+</div>
 
-<h3>Register for an Event</h3>
-<form onsubmit="showMessage(); return false;">
-    <input type="text" name="name" placeholder="Enter Name" required autofocus>
-    <input type="email" name="email" placeholder="Enter Email" required>
-    <input type="date" name="date">
-    <select name="eventType" required>
-        <option>Select Event Type</option>
-        <option>Music Fest</option>
-        <option>Food Fair/option>
-        <option>Art Show</option>
-        <option>Tech Talk</option>
-        <option>Family Day</option>
-        <option>Work Shop</option>
+<!-- Event Registration Form -->
+<div class="container mt-5">
+    <h3>Register for an Event</h3>
+    <form class="bg-white p-4 rounded shadow-sm" onsubmit="showMessage(); return false;">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Event Type</label>
+            <select class="form-select" required>
+                <option>Select Event Type</option>
+                <option>Music Fest</option>
+                <option>Food Fair</option>
+                <option>Art Show</option>
+                <option>Tech Talk</option>
+                <option>Family Day</option>
+                <option>Workshop</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Register</button>
+        <p id="confirmation" class="text-success mt-2"></p>
+    </form>
+</div>
+
+<!-- Feedback Section -->
+<div class="container mt-4">
+    <h3>Feedback</h3>
+    <input type="text" id="phone" class="form-control mb-2" placeholder="Enter Phone Number" onblur="validatePhone()">
+    <select class="form-select mb-2" onchange="showFee(this.value)">
+        <option value="">Select Event</option>
+        <option value="100">Music Fest- $100</option>
+        <option value="50">Food Fair- $50</option>
+        <option value="75">Art Show- $75</option>
+        <option value="30">Tech Talk- $30</option>
+        <option value="20">Family Day- $20</option>
+        <option value="20">Workshop- $20</option>
     </select>
-    <textarea placeholder="Your message"></textarea>
-    <input type="submit" value="Register">
-    <output id="confirmation"></output>
-</form>
+    <p id="feeDisplay" class="text-danger"></p>
+</div>
 
-<h3>Feedback</h3>
-<input type="text" id="phone" onblur="validatePhone()">
-<select onchange="showFee(this.value)">
-    <option value="">Select Event</option>
-  <option value="100">Music Fest- $100</option>
-  <option value="50">Food Fair- $50</option>
-  <option value="75">Art Show- $75</option>
-  <option value="30">Tech Talk- $30</option>
-  <option value="20">Family Day- $20</option>
-  <option value="20">Work shop- $20</option>
-</select>
-<p id="feeDisplay"></p>
+<!-- Event Promo Video -->
+<div class="container mt-4">
+    <h3>Event Promo Video</h3>
 
-<h3>Event Promo Video</h3>
-<video width="320" controls oncanplay="videoReady()">
-    <source src="promo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-<p id="videoStatus"></p>
+    <iframe class="w-100" height="315"
+        src="https://www.youtube.com/embed/07WhmVRJ1O4?si=eo68w1_H1BnYP7D9" 
+        title="YouTube Video" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
 
-<button onclick="getLocation()">Find Nearby Events</button>
-<p id="location"></p>
+    <p id="videoStatus"></p>
+</div>
 
+<!-- Location Button -->
+<div class="container text-center mt-4">
+    <button class="btn btn-primary" onclick="getLocation()">Find Nearby Events</button>
+    <p id="location" class="text-info mt-2"></p>
+</div>
+
+<!-- JavaScript -->
 <script>
     function showMessage() {
         document.getElementById("confirmation").innerText = "Registration submitted!";
@@ -198,8 +156,7 @@
                 },
                 (error) => {
                     document.getElementById("location").innerText = "Error: " + error.message;
-                },
-                { enableHighAccuracy: true, timeout: 5000 }
+                }
             );
         } else {
             document.getElementById("location").innerText = "Geolocation not supported.";
